@@ -1,41 +1,33 @@
-/*Ejercicio 3. Ingrese al Branch CalculadoraV2 para implementar las mejoras en la
-calculadora.. Solicite al usuario un número y muestre por pantalla:
-● El valor absoluto de un número
-● El cuadrado
-● La raíz cuadrada
-● El seno
-● El Coseno
-● La parte entera de un tipo float.
-3
-Taller de Lenguajes I - 2024
-Programador Universitario / Licenciatura en Informática / Ingeniería en Informática
-Trabajo Práctico Nro 6
-Luego de esto, solicite dos números al usuario y determine:
-● El Máximo entre los dos números
-● El Mínimo entre los dos números
-Para TODOS los casos, no olvide contemplar siempre el caso de que el usuario no
-ingrese un número válido.
-Suba al repositorio github ambas ramas.*/
-using System;
-
-Console.WriteLine("Ingrese el numero: \n");
-float numero=float.Parse(Console.ReadLine());
-Console.WriteLine("VALOR ABSOLUTO: \n"+Math.Abs(numero));
-Console.WriteLine("CUADRADO: \n"+Math.Pow(numero,2));
-if(numero>=0){
-    Console.WriteLine("RAIZ CUADRADA: \n"+Math.Sqrt(numero));
+bool otra=true;
+while(otra==true){
+Console.WriteLine("CALCULADORA: \n 1-SUMA \n 2-RESTA \n 3-MULTIPLICACION \n 4-DIVISION");
+int opcion=int.Parse(Console.ReadLine());
+while (opcion <1 || opcion >4 ){
+    Console.WriteLine("Ingrese una opcion valida (1-2-3-4)");
+    opcion=int.Parse(Console.ReadLine());
 }
-Console.WriteLine("EL SENO: \n"+Math.Sin(numero));
-Console.WriteLine("EL COSENO: \n"+Math.Cos(numero));
-Console.WriteLine("PARTE ENTERA: \n"+Math.Truncate(numero));
-
-Console.WriteLine("Ingrese el primer numero: \n");
+Console.WriteLine("Ingrese el primer numero a operar: \n");
 float a=float.Parse(Console.ReadLine());
-Console.WriteLine("Ingrese el segundo numero: \n");
+Console.WriteLine("Ingrese el segundo numero a operar: \n");
 float b=float.Parse(Console.ReadLine());
-if(a<b){
-    Console.WriteLine("EL MAXIMO ES: \n"+b);
-}else{
-    Console.WriteLine("EL MAXIMO ES: \n"+a);
+float resultado=0;
+switch(opcion){
+    case 1:resultado=a+b;
+    break;
+    case 2:resultado=a-b;
+    break;
+    case 3:resultado=a*b;
+    break;
+    case 4:if(b!=0){
+        resultado=a/b;}else{
+            Console.WriteLine("El numero b debe ser distinto de 0");
+        }
+    break;
 }
-
+Console.WriteLine("Resutlado: \n"+resultado);
+Console.WriteLine("Desea realizar otro calculo? \n 1-SI \n 2-NO");
+int otro=int.Parse(Console.ReadLine());
+if(otro!=1){
+    otra=false;
+}
+}
