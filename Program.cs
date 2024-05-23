@@ -1,4 +1,4 @@
-﻿/*Ejercicio 3. Ingrese al Branch CalculadoraV2 para implementar las mejoras en la
+/*Ejercicio 3. Ingrese al Branch CalculadoraV2 para implementar las mejoras en la
 calculadora.. Solicite al usuario un número y muestre por pantalla:
 ● El valor absoluto de un número
 ● El cuadrado
